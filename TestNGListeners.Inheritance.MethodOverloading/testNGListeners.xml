@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Groups Suite">
+
+	<listeners>
+		<listener class-name="testNGListeners.BaseTest"></listener>
+	</listeners>
+
+	<listeners>
+		<listener class-name="testNGListeners.TestNGListeners"></listener>
+	</listeners>
+
+	<test name="Groups Test">
+
+		<parameter name="Login" value="Login Test."></parameter>
+		<parameter name="Logout" value="Logout Test."></parameter>
+		<parameter name="Mercury" value="the 1st planet Mercury."></parameter>
+		<parameter name="Venus" value="the 2nd planet Venus."></parameter>
+		<parameter name="Earth" value="the 3rd planet Earth."></parameter>
+		<parameter name="Mars" value="the 4th planet Mars."></parameter>
+		<parameter name="Jupiter" value="the 5th planet Jupiter."></parameter>
+		<parameter name="Saturn" value="the 6th planet Saturn."></parameter>
+		<parameter name="Uranus" value="the 7th planet Uranus."></parameter>
+		<parameter name="Neptune" value="the 8th planet Neptune."></parameter>
+
+		<groups>
+			<define name="TestNGListeners">
+				<include name="smoke"></include>
+				<include name="regression"></include>
+			</define>
+			<run>
+				<include name="TestNGListeners"></include>
+				<exclude name="functional"></exclude>
+			</run>
+		</groups>
+
+		<classes>
+			<class name="testNGListeners.BaseTest"></class>
+			<class name="testNGListeners.SubBaseTest"></class>
+		</classes>
+
+	</test> <!-- Test -->
+</suite> <!-- Suite -->

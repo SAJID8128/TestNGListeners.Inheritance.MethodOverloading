@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
+  <test thread-count="5" name="Test(failed)">
+    <parameter name="Earth" value="the 3rd planet Earth."/>
+    <parameter name="Mars" value="the 4th planet Mars."/>
+    <parameter name="Neptune" value="the 4th planet Neptune."/>
+    <parameter name="Juptier" value="the 1st planet Jupiter."/>
+    <parameter name="Saturn" value="the 2nd planet Saturn."/>
+    <parameter name="Venus" value="the 2nd planet Venus."/>
+    <parameter name="Uranus" value="the 3rd planet Uranus."/>
+    <parameter name="Mercury" value="the 1st planet Mercury."/>
+    <groups>
+      <run>
+        <include name="TestNGListeners"/>
+        <exclude name="functional"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="testNGListeners.SubBaseTest">
+        <methods>
+          <include name="saturn"/>
+          <include name="uranus"/>
+          <include name="venus"/>
+          <include name="mars"/>
+          <include name="login"/>
+          <include name="logout"/>
+          <include name="jupiter"/>
+        </methods>
+      </class> <!-- testNGListeners.SubBaseTest -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->
